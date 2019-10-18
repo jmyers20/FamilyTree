@@ -22,10 +22,16 @@ if __name__ == '__main__':
             output.write('File is Empty!')
             sys.exit()
         else:
-            #deal with input
+            #separate the test case line by line
             for line in contents:
-                #input = line.split('')
-                output.write(line + '\n')
+                line = line.split(' ')
+                if(line[0] == 'E'):
+                    print(line)                     #replace with method calls
+                elif(line[0] == 'W'):
+                    print(line)                     #replace with method calls
+                elif(line[0] == 'X'):
+                    print(line)                     #replace with method calls
 
-        #program EOF
+                #output.write(line + '\n')
+
         output.close()
