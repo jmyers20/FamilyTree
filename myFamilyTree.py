@@ -1,7 +1,6 @@
 #Programming Assignment #2
 #$> python3 myFamilyTree.py test1.txt output1.txt
 
-import re
 import sys
 
 if __name__ == '__main__':
@@ -18,6 +17,7 @@ if __name__ == '__main__':
         #write into output.txt from commandline
         output = open(sys.argv[2], "w")
 
+        #begin processing what is input 
         if(len(contents) == 0):
             output.write('File is Empty!')
             sys.exit()
