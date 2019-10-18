@@ -15,18 +15,17 @@ if __name__ == '__main__':
             contents = [line.strip('\n') for line in contents]
             test.close()
 
-        if(contents == ''):
-            print('File is Empty!')
+        #write into output.txt from commandline
+        output = open(sys.argv[2], "w")
+
+        if(len(contents) == 0):
+            output.write('File is Empty!')
             sys.exit()
         else:
+            #deal with input
             for line in contents:
-                print(line)
-                #deal with input
+                #input = line.split('')
+                output.write(line + '\n')
 
-        '''
-        **future use**
-        #write into output.txt from commandline
-        with open(sys.argv[2], 'w') as output:
-            output.write(contents)
-            output.close()
-        '''
+        #program EOF
+        output.close()
