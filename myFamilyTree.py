@@ -11,10 +11,22 @@ if __name__ == '__main__':
     else:
         #read from test.txt from commandline
         with open(sys.argv[1], 'r') as test:
-            contents = test.read()
+            contents = test.readlines()
+            contents = [line.strip('\n') for line in contents]
             test.close()
 
+        if(contents == ''):
+            print('File is Empty!')
+            sys.exit()
+        else:
+            for line in contents:
+                print(line)
+                #deal with input
+
+        '''
+        **future use**
         #write into output.txt from commandline
         with open(sys.argv[2], 'w') as output:
             output.write(contents)
             output.close()
+        '''
