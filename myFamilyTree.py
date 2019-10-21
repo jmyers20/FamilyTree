@@ -32,6 +32,20 @@ def addPeople( names ):
             people[names[1]]['spouse'].append(names[2])
             people[names[2]]['spouse'].append(names[1])
 
+    if len(names) == 4:
+        #add each person to each other's spouses
+        if not names[2] in people[names[1]]['spouse']:
+            people[names[1]]['spouse'].append(names[2])
+            people[names[2]]['spouse'].append(names[1])
+
+        #add kid to names[1] and names[2]
+        people[names[1]]['children'].append(names[3])
+        people[names[2]]['children'].append(names[3])
+
+        #add parents to names[3]
+        people[names[3]]['parents'].append(names[1])
+        people[names[3]]['parents'].append(names[2])
+
 if __name__ == '__main__':
     if(len(sys.argv) != 3):
         print('\nPlease follow the execution format:')
@@ -62,6 +76,6 @@ if __name__ == '__main__':
                     print(line)                     #replace with method calls
 
                 #output.write(line + '\n')
-                
+
         myprint( people )
         output.close()
