@@ -22,7 +22,6 @@ def addPeople( names ):
             people[names[x]] = {}
             people[names[x]]['name'] = names[x]
             people[names[x]]['parents'] = []
-            people[names[x]]['siblings'] = []
             people[names[x]]['spouse'] = []
             people[names[x]]['children'] = []
 
