@@ -45,6 +45,26 @@ def addPeople( names ):
         people[names[3]]['parents'].append(names[1])
         people[names[3]]['parents'].append(names[2])
 
+def isSibling( names ):
+    # X name1 sibling name2
+    output.write('X ' + names[1] + ' sibling ' + names[3] + '\n')
+
+    result = 'No \n'
+
+    if not names[1] in people.keys() or not names[3] in people.keys():
+        result = 'No \n'
+
+    else:
+        personOneParents = people[names[1]]['parents']
+        personTwoParents = people[names[3]]['parents']
+
+        for x in personOneParents:
+            for y in personTwoParents:
+                if x == y:
+                    result = 'Yes \n'
+
+    output.write(result + '\n')
+
 if __name__ == '__main__':
     if(len(sys.argv) != 3):
         print('\nPlease follow the execution format:')
@@ -69,12 +89,11 @@ if __name__ == '__main__':
                 line = line.split(' ')
                 if(line[0] == 'E'):
                     addPeople(line)
+                elif(line[0] == 'X'):
+                    if line[2] == 'sibling':
+                        isSibling(line)
                 elif(line[0] == 'W'):
                     print(line)                     #replace with method calls
-                elif(line[0] == 'X'):
-                    print(line)                     #replace with method calls
 
-                #output.write(line + '\n')
-
-        myprint( people )
+        #myprint( people )
         output.close()

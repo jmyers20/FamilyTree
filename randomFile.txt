@@ -2,3 +2,7 @@ E Will Beth Mark
 E Mark Margaret Justin
 E Mark Margaret Matthew
 E Mark Margaret Jennifer
+X Peter sibling James
+X Justin sibling Jennifer
+X Matthew sibling Jennifer
+X Mark sibling Will
