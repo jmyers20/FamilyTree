@@ -44,6 +44,10 @@ def addPeople( names ):
         #add parents to names[3]
         people[names[3]]['parents'].append(names[1])
         people[names[3]]['parents'].append(names[2])
+        
+def getRelatedList(relation):
+        #This function will check the person dictionary to retrieve all the people stored in the another dictionary represented by the type of relation.
+
 
 if __name__ == '__main__':
     if(len(sys.argv) != 3):
@@ -70,7 +74,7 @@ if __name__ == '__main__':
                 if(line[0] == 'E'):
                     addPeople(line)
                 elif(line[0] == 'W'):
-                    print(line)                     #replace with method calls
+                    getRelatedList(line)                     #replace with method calls
                 elif(line[0] == 'X'):
                     print(line)                     #replace with method calls
 
