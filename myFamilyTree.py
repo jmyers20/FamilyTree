@@ -65,6 +65,32 @@ def isSibling( names ):
 
     output.write(result + '\n')
 
+def returnSiblings( names ):
+    # W sibling name1
+
+    output.write('W sibling ' + names[2] + '\n')
+    list = []
+
+    result = ''
+    if not names[2] in people.keys():
+        result += '\n'
+
+    personOneParents = people[names[2]]['parents']
+
+    siblings = []
+    for i in range(0,len(personOneParents)):
+        siblings += people[personOneParents[i]]['children']
+
+    #remove duplicates and names[2] from siblings
+    siblings = set(siblings)
+    siblings.remove(names[2])
+    sorted(siblings)
+
+    for value in siblings:
+        result += value + '\n'
+
+    output.write(result + '\n')
+
 if __name__ == '__main__':
     if(len(sys.argv) != 3):
         print('\nPlease follow the execution format:')
@@ -93,7 +119,8 @@ if __name__ == '__main__':
                     if line[2] == 'sibling':
                         isSibling(line)
                 elif(line[0] == 'W'):
-                    print(line)                     #replace with method calls
+                    if line[1] == 'sibling':
+                        returnSiblings(line)
 
         #myprint( people )
         output.close()

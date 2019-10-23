@@ -1,12 +1,20 @@
-X Peter sibling James
-No 
+W sibling Donald
+Denise
+Daniel
 
-X Justin sibling Jennifer
+W sibling Daniel
+Denise
+Donald
+
+X Daniel sibling Denise
 Yes 
 
-X Matthew sibling Jennifer
+X Denise sibling Daniel
 Yes 
 
-X Mark sibling Will
-No 
+X Donald sibling Daniel
+Yes 
+
+X Donald sibling Denise
+Yes 
 
