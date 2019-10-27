@@ -136,41 +136,7 @@ def returnSiblings( names ):
     
     output.write(result + '\n')
 
-def findancestors(name):
-    checkindividual(name)
-    if len(people[name]['parents'])==0:
-        return []
-    elif people[name]['ancestors']==[]:
-        people[name]['ancestors']=list(set(people[name]['parents']+findancestors(people[name]['parents'][0])+findancestors(people[name]['parents'][1])))
-        return people[name]['ancestors']
-    else:
-        return people[name]['ancestors']
 
-def isancestor(line):
-    name1=line[1]
-    name2=line[3]
-    checkindividual(name1)
-    checkindividual(name2)
-    if name1 in findancestors(name2):
-        output.write('Yes'+ '\n\n')
-        return True
-    else:
-        output.write('No'+ '\n\n')
-        return False
-
-def returnancestor(line):
-    name1=line[2]
-    checkindividual(name1)
-    ancestors=findancestors(name1)
-    quickSort(ancestors)
-    result=''
-    if len(ancestors)==0:
-        result='Nobody' + '\n'
-    else:
-        for value in ancestors:
-            result += value + '\n'
-
-    output.write(result + '\n')
 
 def isunrelated(line):
     name1=line[1]
