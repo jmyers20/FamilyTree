@@ -67,7 +67,7 @@ def isSibling( names ):
     output.write(result + '\n')
 
 def isAncestorHelper(names):
-     output.write('X ' + names[1] + ' sibling ' + names[3] + '\n')
+     output.write('X ' + names[1] + ' ancestor' + names[3] + '\n')
      ancestor = people[names[1]]
      descendant = people[names[3]]	
      isAncestor(ancestor, descendant)
@@ -77,15 +77,32 @@ def isAncestor( ancestor , person ):
     #X name1 ancestor name 3
     result = 'No \n'
     if person['parents'] == []:
- 	return false
+ 	return False
     else:
-	if person['parents'][0] == ancestor :
-		print('here')
+	if person['parents'][0] == ancestor:
+		return True
 	else:
-		ancestorLevelUp = person['parents'][0]
-		resultSideOne = isAncestor(ancestorLevelUp, person)
-
-
+	    ancestorLevelUp = person['parents'][0]
+	    resultSideOne = isAncestor(ancestorLevelUp, person)
+	    if  resultSideOne == True:
+		 result = 'Yes \n'
+		 print(ancestor['name'])
+		 return True
+	    else:
+		 if person['parents'][1] == ancestor :
+                    result = 'Yes \n' 
+		    print(ancestor['name'])   
+		    return True
+		 else:
+		     ancestorLevelUp = person['parents'][1]
+                     resultSideTwo = isAncestor(ancestorLevelUp, person)
+ 		     if  resultSideTwo == True:
+                         result = 'Yes \n'
+		         return True
+		     else:
+			 result = 'No \n'
+			 return False
+# print('here \n')
 
 if __name__ == '__main__':
     if(len(sys.argv) != 3):
