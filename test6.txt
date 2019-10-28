@@ -22,10 +22,5 @@ E Alice Erskin Eamon
 E Erskin Alice Annie
 E Armond Bailley Kelly
 E Carter Denise Claudia
-X Claudia cousin Claude
-W cousin Claude
-W cousin Claudia
-X Claude cousin Claudia
-X Claude cousin Emma
-X Emma cousin Claude
-X David cousin Drusilla
+X Donald cousin 0 Daniel
+X Donald sibling Daniel
